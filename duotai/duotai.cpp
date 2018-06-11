@@ -11,7 +11,8 @@ protected:
 	int inches;
 public:
 	CFeet();
-	virtual void display();//虚函数
+	//virtual void display();//虚函数
+	void display();
 	void setfeet(int f);
 	void setinches(int i);
 	int getfeet();
@@ -43,7 +44,7 @@ int CFeet::getinches()
 {
 	return inches;
 }
-class CMyFeet :public CFeet
+class CMyFeet :public CFeet//继承
 {
 public:
 	void display();
@@ -54,7 +55,7 @@ void CMyFeet::display()
 }
 int main()
 {
-	CFeet *p;//对象指针
+	CMyFeet *p;//对象指针
 	p = new CMyFeet;//CMyFeet AFeet;   p=&AFeet
 	p->setfeet(4);
 	p->setinches(9);
