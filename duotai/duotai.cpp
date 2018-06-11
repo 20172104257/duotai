@@ -11,8 +11,8 @@ protected:
 	int inches;
 public:
 	CFeet();
-	//virtual void display();//虚函数
-	void display();
+	virtual void display();//虚函数
+	//void display();
 	void setfeet(int f);
 	void setinches(int i);
 	int getfeet();
@@ -55,11 +55,11 @@ void CMyFeet::display()
 }
 int main()
 {
-	CMyFeet *p;//对象指针
-	p = new CMyFeet;//CMyFeet AFeet;   p=&AFeet
+	CFeet *p;//对象指针
+	p = new CMyFeet;//CMyFeet AFeet;   p=&AFeet //输出派生类，因为用了虚函数，不用虚函数的话直接输出基类
 	p->setfeet(4);
 	p->setinches(9);
 	p->display();
-	p->CFeet::display();//P可以访问基类和派生类
+	p->CFeet::display();
 	return 0;
 }
